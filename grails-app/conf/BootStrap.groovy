@@ -1,6 +1,9 @@
 import com.objectpartners.crowdball.atbat.Result
 import com.objectpartners.crowdball.player.Player
 import com.objectpartners.crowdball.team.Team
+import com.objectpartners.crowdball.user.Role
+import com.objectpartners.crowdball.user.User
+import com.objectpartners.crowdball.user.UserRole
 
 class BootStrap {
 
@@ -8,6 +11,7 @@ class BootStrap {
         environments {
             development {
                 /**************** TEAMS ****************/
+                log.info "Creating teams for development..."
                 Team twins = new Team (
                         name: 'Twins',
                         country: 'United States',
@@ -23,6 +27,7 @@ class BootStrap {
                 ).save(flush: true)
 
                 /**************** PLAYERS ****************/
+                log.info "Creating players for development..."
                 new Player (
                         firstName: 'Blaine',
                         lastName: 'Boyer',
@@ -324,6 +329,7 @@ class BootStrap {
                 ).save(flush: true)
 
                 /**************** RESULTS ****************/
+                log.info "Creating results for development..."
                 new Result (
                         type: 'SF',
                         display: 'Sacrifice Fly'
@@ -373,9 +379,14 @@ class BootStrap {
                         type: 'HR',
                         display: 'Home Run'
                 ).save(flush: true)
+
+                /**************** SECURITY ******************/
+                log.info "Creating a user and security for development..."
+                Role roleUser = new Role("ROLE_USER").save(flush: true)
+                User userJacob = new User('jacob', 'crowdball').save(flush: true)
+                new UserRole(userJacob, roleUser).save(flush: true)
             }
         }
     }
-    def destroy = {
-    }
+    def destroy = {}
 }

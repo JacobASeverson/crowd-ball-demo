@@ -1,18 +1,19 @@
-Generating Some Code
+Add Users and Security
 ===
-The scaffolding was helpful for flushing out the domain model, but now we need to start making changes to both the 
-look and the functionality. Luckily, Grails ships with a command that will generate the controller code and views that
-we were seeing with the scaffolding:   
-`./grailsw generate-all com.something.YourDomainClass`   
+`./grailsw s2-quickstart com.objectpartners.crowdball.user User Role`
 
-For our model, you would generate the controller and views for the `Player` domain like:   
-`./grailsw generate-all com.objectpartners.crowdball.player.Player`   
+In `grails-app/domain`
+```
+com.objectpartners.crowdball.user.User
+com.objectpartners.crowdball.user.Role
+com.objectpartners.crowdball.user.UserRole
+```
 
-> **Note**: Since we already created controllers for scaffolding, you will be asked if you wanted to overwrite it, enter `y`   
+In `grails-app/conf/Config.groovy` check out the configurations added to the bottom by the plugin.
 
-> **Second Note**: We could have also used the `./grailsw generate-all "*"` command to save some time since we want to generate for all domains
+In `grails-app/conf/BootStrap.groovy` added an example `User`, `Role`, and a `UserRole`
 
-Now if you start the app with `./grailsw run-app` you will see the same thing that we saw with the scaffolding, but
-`grails-app/controllers/com/objectpartners.crowdball.player.PlayerController.groovy` and 
-`grails-app/views/player/*` contain all the code that we can now modify and add to.
+`@Secured('ROLE_USER')` At top of every controller
+
+
 

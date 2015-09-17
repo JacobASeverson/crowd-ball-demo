@@ -1,10 +1,11 @@
 package com.objectpartners.crowdball.game
 
-
-
-import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
+import static org.springframework.http.HttpStatus.*
+
+@Secured('ROLE_USER')
 @Transactional(readOnly = true)
 class GameController {
 
