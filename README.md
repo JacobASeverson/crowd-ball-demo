@@ -1,19 +1,16 @@
-Add Users and Security
+Updating the Domain
 ===
-`./grailsw s2-quickstart com.objectpartners.crowdball.user User Role`
+We now have a functioning domain model and users/security in place, but we need to change out domain so users can be
+associated to their individual game entries so we can keep track of them. 
 
-In `grails-app/domain`
-```
-com.objectpartners.crowdball.user.User
-com.objectpartners.crowdball.user.Role
-com.objectpartners.crowdball.user.UserRole
-```
+![Domain update](img/crowdballdomain2.png)
 
-In `grails-app/conf/Config.groovy` check out the configurations added to the bottom by the plugin.
+`./grailsw create-domain-class com.objectpartners.crowdball.game.GameEntry`
+`./grailsw generate-all com.objectpartners.crowdball.game.GameEntry`
 
-In `grails-app/conf/BootStrap.groovy` added an example `User`, `Role`, and a `UserRole`
+I also added an inning of real game data to `Bootstrap.groovy` from the Twins vs. Cubs game on June 6, 2015 
+(Gibson v. Arrieta).
 
-`@Secured('ROLE_USER')` At top of every controller
 
 
 

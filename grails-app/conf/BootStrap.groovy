@@ -1,4 +1,9 @@
+import com.objectpartners.crowdball.atbat.AtBat
+import com.objectpartners.crowdball.atbat.Pitch
 import com.objectpartners.crowdball.atbat.Result
+import com.objectpartners.crowdball.game.Game
+import com.objectpartners.crowdball.game.GameEntry
+import com.objectpartners.crowdball.game.Inning
 import com.objectpartners.crowdball.player.Player
 import com.objectpartners.crowdball.team.Team
 import com.objectpartners.crowdball.user.Role
@@ -58,7 +63,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player kyleGibson = new Player (
                         firstName: 'Kyle',
                         lastName: 'Gibson',
                         team: twins
@@ -118,7 +123,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player brianDozier = new Player (
                         firstName: 'Brian',
                         lastName: 'Dozier',
                         team: twins
@@ -130,7 +135,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player joeMauer = new Player (
                         firstName: 'Joe',
                         lastName: 'Mauer',
                         team: twins
@@ -142,7 +147,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player trevorPlouffe = new Player (
                         firstName: 'Trevor',
                         lastName: 'Plouffe',
                         team: twins
@@ -166,7 +171,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player eddieRosario = new Player (
                         firstName: 'Eddie',
                         lastName: 'Rosario',
                         team: twins
@@ -178,7 +183,7 @@ class BootStrap {
                         team: twins
                 ).save(flush: true)
 
-                new Player (
+                Player jakeArrieta = new Player (
                         firstName: 'Jake',
                         lastName: 'Arrieta',
                         team: cubs
@@ -256,13 +261,13 @@ class BootStrap {
                         team: cubs
                 ).save(flush: true)
 
-                new Player (
+                Player miguelMontero = new Player (
                         firstName: 'Miguel',
                         lastName: 'Montero',
                         team: cubs
                 ).save(flush: true)
 
-                new Player (
+                Player krisBryant = new Player (
                         firstName: 'Kris',
                         lastName: 'Bryant',
                         team: cubs
@@ -286,7 +291,7 @@ class BootStrap {
                         team: cubs
                 ).save(flush: true)
 
-                new Player (
+                Player anthonyRizzo = new Player (
                         firstName: 'Anthony',
                         lastName: 'Rizzo',
                         team: cubs
@@ -310,7 +315,7 @@ class BootStrap {
                         team: cubs
                 ).save(flush: true)
 
-                new Player (
+                Player dexterFowler = new Player (
                         firstName: 'Dexter',
                         lastName: 'Fowler',
                         team: cubs
@@ -355,17 +360,17 @@ class BootStrap {
                         display: 'Safe on Error'
                 ).save(flush: true)
 
-                new Result (
+                Result out = new Result (
                         type: 'O',
                         display: 'Out'
                 ).save(flush: true)
 
-                new Result (
+                Result single = new Result (
                         type: '1B',
                         display: 'Single'
                 ).save(flush: true)
 
-                new Result (
+                Result doubleResult = new Result (
                         type: '2B',
                         display: 'Double'
                 ).save(flush: true)
@@ -385,6 +390,100 @@ class BootStrap {
                 Role roleUser = new Role("ROLE_USER").save(flush: true)
                 User userJacob = new User('jacob', 'crowdball').save(flush: true)
                 new UserRole(userJacob, roleUser).save(flush: true)
+
+                /**************** GAMES ****************/
+                AtBat atBat1 = new AtBat(pitcher: kyleGibson, batter: dexterFowler)
+                atBat1.addToPitches(new Pitch(type: 'Fastball', speed: 92.4, pitchResult: 'Called Strike'))
+                atBat1.addToPitches(new Pitch(type: 'Fastball', speed: 92.3, pitchResult: 'Called Strike'))
+                atBat1.addToPitches(new Pitch(type: 'Slider', speed: 82.1, pitchResult: 'Ball'))
+                atBat1.addToPitches(new Pitch(type: 'Changeup', speed: 83.8, pitchResult: 'Swinging Strike'))
+                atBat1.result = out
+                atBat1.save(flush: true)
+
+                AtBat atBat2 = new AtBat(pitcher: kyleGibson, batter: anthonyRizzo).save(flush: true)
+                atBat2.addToPitches(new Pitch(type: 'Fastball', speed: 93.6, pitchResult: 'Ball'))
+                atBat2.addToPitches(new Pitch(type: 'Fastball', speed: 92.6, pitchResult: 'Called Strike'))
+                atBat2.addToPitches(new Pitch(type: 'Slider', speed: 85.7, pitchResult: 'Ball'))
+                atBat2.addToPitches(new Pitch(type: 'Fastball', speed: 93.2, pitchResult: 'In Play'))
+                atBat2.result = single
+                atBat2.save(flush: true)
+
+                AtBat atBat3 = new AtBat(pitcher: kyleGibson, batter: krisBryant).save(flush: true)
+                atBat3.addToPitches(new Pitch(type: 'Fastball', speed: 92.9, pitchResult: 'Ball'))
+                atBat3.addToPitches(new Pitch(type: 'Slider', speed: 85.9, pitchResult: 'In Play'))
+                atBat3.result = out
+                atBat3.save(flush: true)
+
+                AtBat atBat4 = new AtBat(pitcher: kyleGibson, batter: miguelMontero).save(flush: true)
+                atBat4.addToPitches(new Pitch(type: 'Fastball', speed: 92.9, pitchResult: 'Foul'))
+                atBat4.addToPitches(new Pitch(type: 'Fastball', speed: 92.0, pitchResult: 'Swinging Strike'))
+                atBat4.addToPitches(new Pitch(type: 'Changeup', speed: 84.0, pitchResult: 'Ball'))
+                atBat4.addToPitches(new Pitch(type: 'Fastball', speed: 86.9, pitchResult: 'Ball'))
+                atBat4.addToPitches(new Pitch(type: 'Slider', speed: 87.5, pitchResult: 'Ball'))
+                atBat4.addToPitches(new Pitch(type: 'Fastball', speed: 93.3, pitchResult: 'Called Strike'))
+                atBat4.result = out
+                atBat4.save(flush: true)
+
+                AtBat atBat5 = new AtBat(pitcher: jakeArrieta, batter: brianDozier).save(flush: true)
+                atBat5.addToPitches(new Pitch(type: 'Fastball', speed: 94.0, pitchResult: 'Called Strike'))
+                atBat5.addToPitches(new Pitch(type: 'Curveball', speed: 81.4, pitchResult: 'Ball'))
+                atBat5.addToPitches(new Pitch(type: 'Slider', speed: 91.2, pitchResult: 'Ball'))
+                atBat5.addToPitches(new Pitch(type: 'Fastball', speed: 95.1, pitchResult: 'In Play'))
+                atBat5.result = single
+                atBat5.save(flush: true)
+
+                AtBat atBat6 = new AtBat(pitcher: jakeArrieta, batter: eddieRosario).save(flush: true)
+                atBat6.addToPitches(new Pitch(type: 'Slider', speed: 95.6, pitchResult: 'Foul'))
+                atBat6.addToPitches(new Pitch(type: 'Slider', speed: 92.0, pitchResult: 'Foul'))
+                atBat6.addToPitches(new Pitch(type: 'Curveball', speed: 82.7, pitchResult: 'Ball'))
+                atBat6.addToPitches(new Pitch(type: 'Curveball', speed: 80.7, pitchResult: 'Foul'))
+                atBat6.addToPitches(new Pitch(type: 'Fastball', speed: 95.5, pitchResult: 'Foul'))
+                atBat6.addToPitches(new Pitch(type: 'Slider', speed: 91.7, pitchResult: 'In Play'))
+                atBat6.result = out
+                atBat6.save(flush: true)
+
+                AtBat atBat7 = new AtBat(pitcher: jakeArrieta, batter: joeMauer).save(flush: true)
+                atBat7.addToPitches(new Pitch(type: 'Fastball', speed: 94.6, pitchResult: 'Called Strike'))
+                atBat7.addToPitches(new Pitch(type: 'Curveball', speed: 80.8, pitchResult: 'Ball'))
+                atBat7.addToPitches(new Pitch(type: 'Changeup', speed: 90.0, pitchResult: 'Ball'))
+                atBat7.addToPitches(new Pitch(type: 'Fastball', speed: 96.0, pitchResult: 'Foul'))
+                atBat7.addToPitches(new Pitch(type: 'Curveball', speed: 80.8, pitchResult: 'Ball'))
+                atBat7.addToPitches(new Pitch(type: 'Slider', speed: 92.4, pitchResult: 'In Play'))
+                atBat7.result = doubleResult
+                atBat7.save(flush: true)
+
+                AtBat atBat8 = new AtBat(pitcher: jakeArrieta, batter: trevorPlouffe).save(flush: true)
+                atBat8.addToPitches(new Pitch(type: 'Slider', speed: 92.7, pitchResult: 'Ball'))
+                atBat8.addToPitches(new Pitch(type: 'Slider', speed: 90.4, pitchResult: 'Ball'))
+                atBat8.addToPitches(new Pitch(type: 'Slider', speed: 93.1, pitchResult: 'Called Strike'))
+                atBat8.addToPitches(new Pitch(type: 'Curveball', speed: 81.4, pitchResult: 'In Play'))
+                atBat8.result = out
+                atBat8.save(flush: true)
+
+                Inning first = new Inning(number: 1)
+                first.addToAtBats(atBat1)
+                first.addToAtBats(atBat2)
+                first.addToAtBats(atBat3)
+                first.addToAtBats(atBat4)
+                first.addToAtBats(atBat5)
+                first.addToAtBats(atBat6)
+                first.addToAtBats(atBat7)
+                first.addToAtBats(atBat8)
+                first.save(flush: true)
+
+                Game jacobGame = new Game(home: twins, away: cubs, date: new Date(2015, 5, 21))
+                jacobGame.addToInnings(first)
+                jacobGame.addToInnings(new Inning(number: 2))
+                jacobGame.addToInnings(new Inning(number: 3))
+                jacobGame.addToInnings(new Inning(number: 4))
+                jacobGame.addToInnings(new Inning(number: 5))
+                jacobGame.addToInnings(new Inning(number: 6))
+                jacobGame.addToInnings(new Inning(number: 7))
+                jacobGame.addToInnings(new Inning(number: 8))
+                jacobGame.addToInnings(new Inning(number: 9))
+                jacobGame.save(flush: true)
+
+                new GameEntry(user: userJacob, game: jacobGame).save(flush: true)
             }
         }
     }

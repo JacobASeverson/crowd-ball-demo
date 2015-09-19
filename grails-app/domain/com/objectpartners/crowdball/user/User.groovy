@@ -1,5 +1,7 @@
 package com.objectpartners.crowdball.user
 
+import com.objectpartners.crowdball.game.Game
+
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1
