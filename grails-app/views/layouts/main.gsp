@@ -7,19 +7,32 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
+		<title>Welcome to CrowdBall</title>
   		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+        <g:set var="username" value="${sec.username().capitalize()}"/>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <g:link class="navbar-brand" controller="home">CrowdBall</g:link>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <sec:ifNotLoggedIn>
+                            <li><g:link controller="login" action="auth">Login</g:link></li>
+                        </sec:ifNotLoggedIn>
+                        <sec:ifLoggedIn>
+                            <li><g:link controller="game">Enter Game</g:link></li>
+                            <li><g:link controller="gameEntry">${username}</g:link></li>
+                            <li><g:link controller="logout">Logout</g:link></li>
+                        </sec:ifLoggedIn>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+        <asset:javascript src="application.js"/>
 	</body>
 </html>
