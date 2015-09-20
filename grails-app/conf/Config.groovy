@@ -132,3 +132,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':        ['permitAll'],
 	'/**/favicon.ico':      ['permitAll']
 ]
+
+grails.plugin.databasesession.enabled = true

@@ -64,6 +64,7 @@ grails.project.dependency.resolution = {
         compile ":asset-pipeline:2.2.3"
         compile ":spring-security-core:2.0-RC5"
         compile ":fields:1.5.1"
+        compile ":database-session:1.2.1"
 
         // plugins needed at runtime but not for compilation
         runtime ':twitter-bootstrap:3.3.5'

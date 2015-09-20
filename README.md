@@ -1,10 +1,9 @@
-Creating the UI
+Session Handling
 ===
 
-Add `runtime ':twitter-bootstrap:3.3.5'` to `BuildConfig.groovy`
-Add `//= require bootstrap` to `grails-app/assets/javascripts/application.js`
-Add `= require bootstrap` to the top comment section in `grails-app/assets/javascripts/application.css`
-Added `com.objectpartners.crowdball.HomeController`
+Add `compile ":database-session:1.2.1"` to `BuildConfig.groovy`
+Add `grails.plugin.databasesession.enabled = true` to `Config.groovy`
+
 
 
 
