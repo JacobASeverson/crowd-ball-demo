@@ -20,7 +20,7 @@ class Game {
 
     @Override
     String toString() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         "${home?.name} vs. ${away} ${dateFormat.format(date)}"
     }
 }

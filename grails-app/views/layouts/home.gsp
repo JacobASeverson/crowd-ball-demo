@@ -24,12 +24,12 @@
                     <li><g:link controller="login" action="auth">Login</g:link></li>
                 </sec:ifNotLoggedIn>
                 <sec:ifLoggedIn>
-                    <li><g:link controller="game">Enter Game</g:link></li>
-                    <li><g:link controller="gameEntry">${username}</g:link></li>
+                    <li><g:link controller="gameEntry" action="create">Enter Game</g:link></li>
+                    <li><g:link controller="gameEntry" action="index">${username}</g:link></li>
                     <li><g:link controller="logout">Logout</g:link></li>
                 </sec:ifLoggedIn>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <g:layoutBody/>

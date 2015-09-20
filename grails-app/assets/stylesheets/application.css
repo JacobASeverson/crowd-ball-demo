@@ -22,3 +22,11 @@
 .mainContent {
     margin-top: 100px;
 }
+
+.cellPadEmpty {
+    padding: 10px;
+}
+
+.cellPadEmpty2 {
+    padding: 20px;
+}

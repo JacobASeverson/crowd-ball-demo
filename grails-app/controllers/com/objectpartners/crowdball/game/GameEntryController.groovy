@@ -2,9 +2,9 @@ package com.objectpartners.crowdball.game
 
 import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
+import grails.transaction.Transactional
 
 import static org.springframework.http.HttpStatus.*
-import grails.transaction.Transactional
 
 @Secured('ROLE_USER')
 @Transactional(readOnly = true)
@@ -22,11 +22,17 @@ class GameEntryController {
     }
 
     def show(GameEntry gameEntryInstance) {
-        respond gameEntryInstance
+        if (gameEntryInstance.user != springSecurityService.currentUser) {
+            notFound()
+        }
+        render view: 'show', model: [gameEntryInstance: gameEntryInstance,
+                                     innings: gameEntryInstance?.game?.innings?.sort {it.number}]
     }
 
     def create() {
-        respond new GameEntry(params)
+        Game game = new Game()
+        GameEntry gameEntry = new GameEntry(game: game)
+        render view: 'create', model: [gameEntry: gameEntry]
     }
 
     @Transactional

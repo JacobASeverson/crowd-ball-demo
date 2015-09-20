@@ -63,6 +63,7 @@ grails.project.dependency.resolution = {
         // asset-pipeline 2.0+ requires Java 7, use version 1.9.x with Java 6
         compile ":asset-pipeline:2.2.3"
         compile ":spring-security-core:2.0-RC5"
+        compile ":fields:1.5.1"
 
         // plugins needed at runtime but not for compilation
         runtime ':twitter-bootstrap:3.3.5'

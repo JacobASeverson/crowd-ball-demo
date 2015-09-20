@@ -1,31 +1,23 @@
-<%@ page import="com.objectpartners.crowdball.game.GameEntry" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: gameEntryInstance, field: 'game', 'error')} required">
-	<label for="game">
-		<g:message code="gameEntry.game.label" default="Game" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="game" name="game.id" from="${com.objectpartners.crowdball.game.Game.list()}" optionKey="id" required="" value="${gameEntryInstance?.game?.id}" class="many-to-one"/>
-
+<g:set var="game" value="${new com.objectpartners.crowdball.game.Game()}" />
+<div>
+    <label for="home">Home:</label>
+    <g:select name="home" from="${com.objectpartners.crowdball.team.Team.list()}" class="form-control" />
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: gameEntryInstance, field: 'user', 'error')} required">
-	<label for="user">
-		<g:message code="gameEntry.user.label" default="User" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="user" name="user.id" from="${com.objectpartners.crowdball.user.User.list()}" optionKey="id" required="" value="${gameEntryInstance?.user?.id}" class="many-to-one"/>
-
+<div>
+    <label for="away">Away:</label>
+    <g:select name="away" from="${com.objectpartners.crowdball.team.Team.list()}" class="form-control" />
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: gameEntryInstance, field: 'complete', 'error')} ">
-	<label for="complete">
-		<g:message code="gameEntry.complete.label" default="Complete" />
-		
-	</label>
-	<g:checkBox name="complete" value="${gameEntryInstance?.complete}" />
-
+<div>
+    <label for="gameDate">Date:</label>
+    <g:datePicker name="gameDate" precision="day" />
 </div>
+<g:each in="${1..9}" var="inningNum" >
+    <div>
+        <label for="inning${inningNum}">Inning ${inningNum}</label>
+        <f:with bean="inning">
+            <f:field property="number" />
+        </f:with>
+    </div>
+</g:each>
 
