@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <g:if test='${flash.message}'>
-        <div class='login_message'>${flash.message}</div>
+        <div class='alert alert-danger'>${flash.message}</div>
     </g:if>
     <form class="form-signin" action="${postUrl}" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>

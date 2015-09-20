@@ -2,6 +2,8 @@ package com.objectpartners.crowdball.game
 
 import com.objectpartners.crowdball.team.Team
 
+import java.text.SimpleDateFormat
+
 class Game {
 
     Team home
@@ -18,6 +20,7 @@ class Game {
 
     @Override
     String toString() {
-        "${home?.name} vs. ${away} $date"
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        "${home?.name} vs. ${away} ${dateFormat.format(date)}"
     }
 }

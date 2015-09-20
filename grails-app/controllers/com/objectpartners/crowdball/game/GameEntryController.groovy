@@ -1,5 +1,6 @@
 package com.objectpartners.crowdball.game
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
@@ -11,9 +12,13 @@ class GameEntryController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    SpringSecurityService springSecurityService
+
     def index(Integer max) {
+
         params.max = Math.min(max ?: 10, 100)
-        respond GameEntry.list(params), model:[gameEntryInstanceCount: GameEntry.count()]
+        respond GameEntry.findByUser(springSecurityService.currentUser).list(params),
+                model:[gameEntryInstanceCount: GameEntry.count()]
     }
 
     def show(GameEntry gameEntryInstance) {

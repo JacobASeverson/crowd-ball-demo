@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="main">
-    <title></title>
+    <meta name="layout" content="home">
 </head>
 
 <body>

@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Welcome to CrowdBall</title>
+		<title>CrowdBall</title>
   		<asset:stylesheet src="application.css"/>
 		<g:layoutHead/>
 	</head>
@@ -32,7 +32,11 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-		<g:layoutBody/>
+        <div class="row mainContent">
+            <div class="mainContent col-md-2"></div>
+            <div class="col-md-8"><g:layoutBody/></div>
+            <div class="col-md-2"></div>
+        </div>
         <asset:javascript src="application.js"/>
 	</body>
 </html>
