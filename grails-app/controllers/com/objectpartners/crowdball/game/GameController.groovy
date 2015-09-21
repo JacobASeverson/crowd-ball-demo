@@ -10,6 +10,8 @@ class GameController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    GameService gameService
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Game.list(params), model:[gameInstanceCount: Game.count()]
@@ -23,7 +25,6 @@ class GameController {
         respond new Game(params)
     }
 
-    @Transactional
     def save(Game gameInstance) {
         if (gameInstance == null) {
             notFound()
@@ -35,7 +36,7 @@ class GameController {
             return
         }
 
-        gameInstance.save flush:true
+        gameService.save(gameInstance)
 
         request.withFormat {
             form multipartForm {
