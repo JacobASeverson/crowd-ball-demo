@@ -40,3 +40,19 @@ with a domain model that is persisting data to an embedded database!
 Sometimes it's nice to be able to populate the database for lower environments and Grails allows that capability in 
 `grails-app/conf/Bootstrap.groovy`. You will notice I created some data in the `development` environment so we have
  some data to play with on application startup.
+ 
+# Additional Topics
+
+## GORM
+
+### Constraints
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/single.html#constraints)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/1-initial-domain-model/grails-app/domain/com/objectpartners/crowdball/game/Game.groovy#L13-L16)
+
+### Association
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/GORM.html#gormAssociation)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/1-initial-domain-model/grails-app/domain/com/objectpartners/crowdball/game/Game.groovy#L11)
+
+### Simple Persistence to DB
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/GORM.html#persistenceBasics)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/1-initial-domain-model/grails-app/conf/BootStrap.groovy#L16)
