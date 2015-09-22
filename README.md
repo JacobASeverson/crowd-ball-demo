@@ -11,7 +11,7 @@ a reward are provided access to complex statistical analysis for the next day (o
 tool for daily fantasy baseball players or baseball stat nerds.
 
 ## Getting Started
-It is assumed that you have Grails already installed, if not, check out [GVM](http://gvmtool.net/) which is the best way in my opinion. The
+It is assumed that you have Grails already installed, if not, check out [SDKMAN!](http://sdkman.io/) which is the best way in my opinion. The
 version of Grails used in this application is `2.5.1`, so make sure that is the version on your path while going through
 the steps below.
 
