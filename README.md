@@ -16,3 +16,34 @@ Now if you start the app with `./grailsw run-app` you will see the same thing th
 `grails-app/controllers/com/objectpartners.crowdball.player.PlayerController.groovy` and 
 `grails-app/views/player/*` contain all the code that we can now modify and add to.
 
+# Additional Topics
+
+## Services
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/services.html)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/2-generate-code/grails-app/services/com/objectpartners/crowdball/game/GameService.groovy)
+
+## Dynamic Finders
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/GORM.html#finders)
+* Example: Using with Intellij
+
+## Testing
+
+### Unit Testing Domains
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/testing.html#unitTestingDomains)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/2-generate-code/test/unit/com/objectpartners/crowdball/game/GameSpec.groovy)
+
+### Unit Testing Controllers
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/testing.html#unitTestingControllers)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/2-generate-code/test/unit/com/objectpartners/crowdball/game/GameControllerSpec.groovy)
+
+### Unit Testing Services
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/2-generate-code/test/unit/com/objectpartners/crowdball/game/GameServiceSpec.groovy)
+
+### Integration Testing
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/testing.html#integrationTesting)
+
+### Functional Testing
+* [Docs] (http://grails.github.io/grails-doc/2.5.1/guide/testing.html#functionalTesting)
+
+
+
