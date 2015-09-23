@@ -11,6 +11,9 @@ associated to their individual game entries so we can keep track of them.
 I also added an inning of real game data to `Bootstrap.groovy` from the Twins vs. Cubs game on June 6, 2015 
 (Gibson v. Arrieta).
 
+# Additional Topics
+None for this branch :-)
+
 
 
 
