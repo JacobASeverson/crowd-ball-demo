@@ -15,5 +15,13 @@ In `grails-app/conf/BootStrap.groovy` added an example `User`, `Role`, and a `Us
 
 `@Secured('ROLE_USER')` At top of every controller
 
+# Additional Topics
 
+## Plugins
 
+### Using Plugins
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/plugins.html)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/3-security-user/grails-app/conf/BuildConfig.groovy#L56-L78)
+
+### Inline Plugins
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/plugins.html)
