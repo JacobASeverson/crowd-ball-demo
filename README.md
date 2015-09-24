@@ -34,6 +34,5 @@ plugin which has the same name.
 * [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/5-creating-ui/grails-app/views/layouts/main.gsp)
 
 ## Taglibs
-*
-
-
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/theWebLayer.html#tags)
+* [Example](https://github.com/grails-plugins/grails-spring-security-core/blob/master/grails-app/taglib/grails/plugin/springsecurity/SecurityTagLib.groovy#L134-L138)
