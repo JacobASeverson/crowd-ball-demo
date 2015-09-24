@@ -30,7 +30,8 @@ plugin which has the same name.
 * [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/5-creating-ui/grails-app/views/home/index.gsp)
 
 ## Layouts
-*
+* [Docs](http://grails.github.io/grails-doc/2.5.1/guide/theWebLayer.html#layouts)
+* [Example](https://github.com/JacobASeverson/crowd-ball-demo/blob/5-creating-ui/grails-app/views/layouts/main.gsp)
 
 ## Taglibs
 *
